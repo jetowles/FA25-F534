@@ -8,16 +8,7 @@ Created on Sun Nov  2 10:19:53 2025
 %reset -f
 %clear
 
-import os
-
-# Assume current working directory is /home/user/project
-print(f"Initial CWD: {os.getcwd()}")
-
-# Change to a subdirectory named 'data'
-os.chdir("Lecture 3 - Regression")
-print(f"CWD after entering 'data': {os.getcwd()}")
-
-# Reading from a CSV File 
+# Reading from a CSV File #loads pandas into memory
 import pandas as pd
 
 train = pd.read_csv('train.csv')
