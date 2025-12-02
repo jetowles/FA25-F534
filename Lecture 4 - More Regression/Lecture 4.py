@@ -23,7 +23,7 @@ import os
 # Assume current working directory is /home/user/project
 # Change to a subdirectory
 os.chdir("Lecture 4 - More Regression")
-# Reading from a CSV File 
+# Reading from a CSV File
 train = pd.read_csv('train.csv') 
 val = pd.read_csv('validate.csv')
 # Change back to FA25-F534 directory
@@ -278,6 +278,11 @@ coeffs = pd.DataFrame(
     ]
 ).transpose().set_index(0)
 coeffs
+
+# Calculate MSE on scaled data
+y_pred = lr.predict(X_train)
+mse_train = mse(y_train, y_pred)
+print(f"Mean Squared Error on test set: {mse_train}")
 
 from sklearn.linear_model import Ridge
 # The alpha used by Python's ridge should be the lambda in Hull's book times the number of observations
